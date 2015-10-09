@@ -3,5 +3,5 @@
 
 module.exports = {
   dump: require('./lib/dump'),
-//  test: require('./lib/test')
+  test: require('./lib/test')
 }
