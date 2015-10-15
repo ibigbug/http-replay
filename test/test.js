@@ -42,20 +42,7 @@ describe('dump', function() {
 describe('test', function() {
   it('should work', function(done) {
     let tester = require('..').test
-    let errors = []
-    tester({server: server, savePath: path.join(process.cwd(), './test/data/http-replay-dump.json')}).forEach(function(tester) {
-      errors.push(new Promise(function(resolve) {
-        tester.end(function(err) {
-          if (err) {
-            resolve(err)
-          } else {
-            resolve(null)
-          }
-        })
-      }))
-    })
-
-    Promise.all(errors).then(function(errs) {
+    tester({server: server, savePath: path.join(process.cwd(), './test/data/http-replay-dump.json')}).promise.then(function(errs) {
       errs = errs.filter(function(e){ return e})
       if (errs.length) {
         done(new Error(errs.join('\n')))

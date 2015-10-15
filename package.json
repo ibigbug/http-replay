@@ -1,6 +1,6 @@
 {
   "name": "http-replay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dump http request for testing.",
   "main": "index.js",
   "scripts": {
